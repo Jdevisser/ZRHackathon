@@ -52,9 +52,21 @@
 <script>
 var listener = new window.keypress.Listener();
 
+listener.simple_combo("s", function() {
+    console.log("You pressed s");
+    bootbox.alert("Abnormal water level detected on Tank #12");
+});
+
 listener.simple_combo("a", function() {
     console.log("You pressed a");
-    bootbox.alert("Abnormal water level detected on Tank #12");
+        if (document.getElementById("default").src == "{{ asset('img/test.png') }}") 
+        {
+            document.getElementById("default").src = "{{ asset('img/test1.png') }}";
+        }
+        else 
+        {
+            document.getElementById("default").src = "{{ asset('img/test.png') }}";
+        }
 });
 
 function showDiv() {
