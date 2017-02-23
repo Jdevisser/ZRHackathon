@@ -1,0 +1,14 @@
+// Firtst you connect to videolink WIFI 
+<html>
+<head>
+</head>
+<style>
+iframe {
+	width:100vh;
+	height:100vh;
+}
+</style>
+	<body>
+	<iframe src="http://192.168.1.101:8080/browserfs.html"></iframe>
+	</body>
+</html>
