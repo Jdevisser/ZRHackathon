@@ -12,7 +12,7 @@
 
                 <div class="panel-body">
                     <!-- <iframe frameborder=0 style='width:100%;height:500px' src='//www.zeemaps.com/pub?group=2422652&x=3.728351&y=51.441767&z=1'> </iframe> -->
-                    <img id="default" src="{{ asset('img/map.png') }}" onclick="showDiv()">
+                    <img id="default" src="{{ asset('img/test.png') }}" onclick="showDiv()">
                 </div>
             </div>
         </div>
