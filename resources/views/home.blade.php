@@ -11,11 +11,12 @@
                 <div class="panel-heading">Map</div>
 
                 <div class="panel-body">
-                    <iframe frameborder=0 style='width:100%;height:500px' src='//www.zeemaps.com/pub?group=2422652&x=3.728351&y=51.441767&z=1'> </iframe>
+                    <!-- <iframe frameborder=0 style='width:100%;height:500px' src='//www.zeemaps.com/pub?group=2422652&x=3.728351&y=51.441767&z=1'> </iframe> -->
+                    <img id="default" src="{{ asset('img/test.png') }}" onclick="showDiv()">
                 </div>
             </div>
         </div>
-        <div class="col-xs-6">
+        <div class="col-xs-6" id="welcomeDiv" style="display:none;">
             <div class="panel panel-default">
                 <div class="panel-heading">Video</div>
 
@@ -28,6 +29,14 @@
 
                 <div class="panel-body">
                     ...
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">Weather</div>
+
+                <div class="panel-body">
+                    <iframe src="https://gadgets.buienradar.nl/gadget/forecastandstation/6310/" noresize scrolling=no hspace=0 vspace=0 frameborder=0 marginheight=0 marginwidth=0 width=300 height=190></iframe>
+                    <iframe src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=51.4425&lng=3.57361&overname=2&zoom=6&naam=Vlissingen&size=2&voor=1" scrolling=no width=256 height=256 frameborder=no></iframe>
                 </div>
             </div>
         </div>
@@ -47,6 +56,10 @@ listener.simple_combo("a", function() {
     console.log("You pressed a");
     bootbox.alert("Abnormal water level detected on Tank #12");
 });
+
+function showDiv() {
+   document.getElementById('welcomeDiv').style.display = "block";
+}
 </script>
 
 @endsection
