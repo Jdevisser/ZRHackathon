@@ -8,7 +8,7 @@
                 <div class="panel-heading">Map</div>
 
                 <div class="panel-body">
-                    ...
+                    <img id="map" src="img/map.png">
                 </div>
             </div>
         </div>
@@ -17,7 +17,7 @@
                 <div class="panel-heading">Video</div>
 
                 <div class="panel-body">
-                    ...
+                    <iframe src="http://192.168.1.101:8080/browserfs.html"></iframe>
                 </div>
             </div>
             <div class="panel panel-default">
