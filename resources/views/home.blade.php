@@ -88,6 +88,19 @@ listener.simple_combo("a", function() {
     });
 });
 
+listener.simple_combo("s", function() {
+
+    console.log("You pressed s");
+        if (document.getElementById("default").src == "{{ asset('img/test.png') }}") 
+        {
+            document.getElementById("default").src = "{{ asset('img/test1.png') }}";
+        }
+        else 
+        {
+            document.getElementById("default").src = "{{ asset('img/test.png') }}";
+        }
+});
+
 function showDiv() {
    document.getElementById('welcomeDiv').style.display = "block";
 }
