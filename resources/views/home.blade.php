@@ -35,8 +35,8 @@
                 <div class="panel-heading">Weather</div>
 
                 <div class="panel-body">
-                    <iframe src="https://gadgets.buienradar.nl/gadget/forecastandstation/6310/" noresize scrolling=no hspace=0 vspace=0 frameborder=0 marginheight=0 marginwidth=0 width=300 height=190></iframe>
-                    <iframe src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=51.4425&lng=3.57361&overname=2&zoom=6&naam=Vlissingen&size=2&voor=1" scrolling=no width=256 height=256 frameborder=no></iframe>
+                    <iframe src="http://gadgets.buienradar.nl/gadget/forecastandstation/6310/" noresize scrolling=no hspace=0 vspace=0 frameborder=0 marginheight=0 marginwidth=0 width=300 height=190></iframe>
+                    <iframe src="http://gadgets.buienradar.nl/gadget/zoommap/?lat=51.4425&lng=3.57361&overname=2&zoom=6&naam=Vlissingen&size=2&voor=1" scrolling=no width=256 height=256 frameborder=no></iframe>
                 </div>
             </div>
         </div>
@@ -52,12 +52,8 @@
 <script>
 var listener = new window.keypress.Listener();
 
-listener.simple_combo("s", function() {
-    console.log("You pressed s");
-    bootbox.alert("Abnormal water level detected on Tank #12");
-});
-
 listener.simple_combo("a", function() {
+
     console.log("You pressed a");
         if (document.getElementById("default").src == "{{ asset('img/test.png') }}") 
         {
@@ -67,6 +63,29 @@ listener.simple_combo("a", function() {
         {
             document.getElementById("default").src = "{{ asset('img/test.png') }}";
         }
+
+    bootbox.confirm({
+        message: "Abnormal water level detected on Tank #12",
+        buttons: {
+            confirm: {
+                label: 'Go to Tank #12',
+                className: 'btn-default'
+            },
+            cancel: {
+                label: 'Close',
+                className: 'btn-default'
+            }
+        },
+        callback: function (result) {
+           if (result === true) {
+                console.log("test")
+                showDiv()
+            }
+            else {
+                console.log("kill")
+            }
+        }
+    });
 });
 
 function showDiv() {
