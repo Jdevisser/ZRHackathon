@@ -14,8 +14,7 @@ class CreateLoggingTable extends Migration
     public function up()
     {
         Schema::create('logging', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('description');
+            $table->integer('trigger');
             $table->timestamps();
         });
     }

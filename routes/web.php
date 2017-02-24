@@ -14,3 +14,5 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index');
+Route::put('measurement/{level}', 'StoreController@store');
+Route::put('logging/{trigger}', 'StoreController@update');
