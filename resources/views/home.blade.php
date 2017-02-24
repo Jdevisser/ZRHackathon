@@ -26,9 +26,9 @@
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">Data</div>
-
+                    <img style="width:550px;" src="img/grafiek.jpg">
                 <div class="panel-body">
-                    ...
+
                 </div>
             </div>
             <div class="panel panel-default">
@@ -88,6 +88,7 @@ listener.simple_combo("a", function() {
 
     bootbox.confirm({
         message: "Abnormal water level detected on Tank #12",
+        className: 'bb-alternate-modal',
         buttons: {
             confirm: {
                 label: 'Go to Tank #12',
