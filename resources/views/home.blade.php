@@ -34,9 +34,31 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Weather</div>
 
-                <div class="panel-body">
+<!--            <div class="panel-body">
                     <iframe src="http://gadgets.buienradar.nl/gadget/forecastandstation/6310/" noresize scrolling=no hspace=0 vspace=0 frameborder=0 marginheight=0 marginwidth=0 width=300 height=190></iframe>
                     <iframe src="http://gadgets.buienradar.nl/gadget/zoommap/?lat=51.4425&lng=3.57361&overname=2&zoom=6&naam=Vlissingen&size=2&voor=1" scrolling=no width=256 height=256 frameborder=no></iframe>
+                </div>
+-->             <div class="panel-body">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <td>Current weather</td>
+                                <td class="weather"></td>
+                            <tr>
+                            <tr>
+                                <td>Expected weather tomorrow</td>
+                                <td class="weather1"></td>
+                            <tr>
+                            <tr>
+                                <td>Expected weather in 2 days</td>
+                                <td class="weather2"></td>
+                            <tr>
+                            <tr>
+                                <td>Expected weather in 3 days</td>
+                                <td class="weather3"></td>
+                            <tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -108,6 +130,25 @@ function showDiv() {
 function hideDiv() {
    document.getElementById('welcomeDiv').style.display = "none";
 }
+
+$(document).ready(function() {
+    $.ajax({
+        url: "http://api.openweathermap.org/data/2.5/weather?id=2745392&APPID=de28ec8fb6eae9c1e9868bff57e3f101"
+    }).then(function(data) {
+       $('.weather').append(data.weather[0].main);
+    });
+});
+
+$(document).ready(function() {
+    $.ajax({
+        url: "http://api.openweathermap.org/data/2.5/forecast?id=2745392&APPID=de28ec8fb6eae9c1e9868bff57e3f101"
+    }).then(function(data) {
+       $('.weather1').append(data.list[0].weather[0].main);
+       $('.weather2').append(data.list[8].weather[0].main);
+       $('.weather3').append(data.list[16].weather[0].main);
+    });
+});
+
 </script>
 
 @endsection
