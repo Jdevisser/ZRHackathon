@@ -13,7 +13,8 @@ class CreateLoggingTable extends Migration
      */
     public function up()
     {
-        Schema::create('logging', function (Blueprint $table) {
+        Schema::create('loggings', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('trigger');
             $table->timestamps();
         });
@@ -26,6 +27,6 @@ class CreateLoggingTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('logging');
+        Schema::dropIfExists('loggings');
     }
 }

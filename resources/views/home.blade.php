@@ -42,20 +42,24 @@
                     <table class="table table-hover">
                         <tbody>
                             <tr>
-                                <td>Current weather</td>
+                                <td>Vandaag</td>
                                 <td class="weather"></td>
+								<td>2 mm</td>
                             <tr>
                             <tr>
-                                <td>Expected weather tomorrow</td>
+                                <td>Morgen</td>
                                 <td class="weather1"></td>
+								<td>0.3 mm</td>
                             <tr>
                             <tr>
-                                <td>Expected weather in 2 days</td>
+                                <td>Overmorgen</td>
                                 <td class="weather2"></td>
+								<td>0.5 mm</td>
                             <tr>
                             <tr>
-                                <td>Expected weather in 3 days</td>
+                                <td>Over 3 dagen</td>
                                 <td class="weather3"></td>
+								<td>5.5 mm</td>
                             <tr>
                         </tbody>
                     </table>
@@ -121,6 +125,18 @@ listener.simple_combo("s", function() {
         {
             document.getElementById("default").src = "{{ asset('img/test.png') }}";
         }
+});
+
+listener.simple_combo("r", function() {
+
+    console.log("You pressed r");
+    $.ajax({
+        type: "POST",
+        url: "http://controlpanel.local/api/logging/1",
+        data: {
+            trigger: 0
+        }
+    });
 });
 
 function showDiv() {
